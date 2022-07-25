@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aoran.stockapi.mapper.StockMapper">
+
+    <select id="queryStockInfo" resultType="com.aoran.stockapi.po.ModelInfo">
+        select carModelId modelId, carModelName modelName, count(carId) stockCount from (select car_id         carId,
+        car_model_id   carModelId,
+        car_model_name carModelName,
+        count(id) t
+        from car_stock_info
+        where stock_date >= #{startDate}
+        and stock_date <![CDATA[<=]]> #{endDate}
+        and stock_status = 0
+        group by car_id,car_model_id,car_model_name
+        having t >= #{total} ) tmp group by carModelId,carModelName
+    </select>
+
+
+    <select id="queryMaxDate" resultType="java.time.LocalDate">
+        select max(stock_date)
+        from car_stock_info
+        where car_id = #{carId}
+    </select>
+
+
+    <insert id="batchInsertStock" parameterType="com.aoran.stockapi.dto.StockDetail">
+        insert into car_stock_info (car_id, car_model_id, car_model_name, stock_date) values
+        <foreach collection="stockInfos" item="stock" separator=",">
+            (#{stock.carId}, #{stock.carModelId}, #{stock.carModelName}, #{stock.stockDate})
+        </foreach>
+    </insert>
+
+
+    <select id="queryStockDetail" resultType="com.aoran.stockapi.po.StockDetail">
+        select car_id         carId,
+               car_model_id   carModelId,
+               car_model_name carModelName,
+               count(id) t
+        from car_stock_info
+        where stock_date >= #{startDate}
+          and stock_date <![CDATA[<=]]> #{endDate}
+          and car_model_id = #{carModelId}
+          and stock_status = 0
+        group by car_id,car_model_id,car_model_name
+        having t >= #{total}
+    </select>
+
+
+    <select id="queryStockByCarId" resultType="int">
+        select count(id)
+        from car_stock_info
+        where car_id = #{carId}
+          and stock_status = 0
+          and stock_date >= #{startDate}
+          and stock_date <![CDATA[<=]]> #{endDate}
+    </select>
+
+
+    <update id="updateCarStockStatus">
+        update car_stock_info
+        set stock_status = 1,
+            user_id      = #{userId}
+        where car_id = #{carId}
+          and stock_date >= #{startDate}
+          and stock_date <![CDATA[<=]]> #{endDate}
+    </update>
+
+</mapper>

@@ -1,0 +1,17 @@
+com/aoran/stockapi/po/StockDetail.class
+com/aoran/stockapi/service/impl/StockServiceV1.class
+com/aoran/stockapi/dto/OrderInfo.class
+com/aoran/stockapi/dto/CarInfo.class
+com/aoran/stockapi/mapper/OrderInfoMapper.class
+com/aoran/stockapi/po/StockInfo.class
+com/aoran/stockapi/schedule/InitialStockTask.class
+com/aoran/stockapi/dto/StockDetail.class
+com/aoran/stockapi/base/Response.class
+com/aoran/stockapi/po/ModelInfo.class
+com/aoran/stockapi/service/StockService.class
+com/aoran/stockapi/mapper/StockMapper.class
+com/aoran/stockapi/mapper/CarInfoMapper.class
+com/aoran/stockapi/controller/StockController.class
+com/aoran/stockapi/StockApiApplication.class
+com/aoran/stockapi/base/OrderStatus.class
+com/aoran/stockapi/config/Config.class

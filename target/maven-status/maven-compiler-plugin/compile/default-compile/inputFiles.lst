@@ -1,0 +1,17 @@
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/dto/StockDetail.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/config/Config.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/mapper/OrderInfoMapper.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/po/StockInfo.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/controller/StockController.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/dto/CarInfo.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/dto/OrderInfo.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/po/ModelInfo.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/base/OrderStatus.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/service/StockService.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/mapper/CarInfoMapper.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/po/StockDetail.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/mapper/StockMapper.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/service/impl/StockServiceV1.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/schedule/InitialStockTask.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/base/Response.java
+/Users/morty/IdeaProjects/stock-api/src/main/java/com/aoran/stockapi/StockApiApplication.java
